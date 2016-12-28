@@ -104,7 +104,7 @@ open class FolioReaderPageIndicator: UIView {
 }
 
 extension FolioReaderPageIndicator: CAAnimationDelegate {
-    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+    public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         // Set the shadow color to the final value of the animation is done
         if let keyPath = anim.value(forKeyPath: "keyPath") as? String , keyPath == "shadowColor" {
             let color = isNight(readerConfig.nightModeBackground, UIColor.white)
