@@ -73,6 +73,7 @@ open class FolioReaderCenter: UIViewController, UICollectionViewDelegate, UIColl
     var tempFragment: String?
 	open fileprivate(set) var currentPage: FolioReaderPage?
     var animator: ZFModalTransitionAnimator!
+
     open var pageIndicatorView: FolioReaderPageIndicator?
 	open var pageIndicatorHeight: CGFloat = 20
 
