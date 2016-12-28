@@ -42,7 +42,7 @@ open class FolioReaderPageIndicator: UIView {
         addSubview(minutesLabel)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required open init?(coder aDecoder: NSCoder) {
         fatalError("storyboards are incompatible with truth and beauty")
     }
     
