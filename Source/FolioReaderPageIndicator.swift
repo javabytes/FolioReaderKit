@@ -14,7 +14,9 @@ open class FolioReaderPageIndicator: UIView {
     open var totalMinutes: Int!
     open var totalPages: Int!
     open var currentPage: Int = 1 {
-        didSet { self.reloadViewWithPage(self.currentPage) }
+        didSet {
+            self.reloadViewWithPage(self.currentPage)
+        }
     }
     
     override init(frame: CGRect) {
@@ -41,7 +43,9 @@ open class FolioReaderPageIndicator: UIView {
 //        minutesLabel.alpha = 0
         addSubview(minutesLabel)
     }
-    /*required */override open init?(coder aDecoder: NSCoder) {
+
+
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("storyboards are incompatible with truth and beauty")
     }
     
