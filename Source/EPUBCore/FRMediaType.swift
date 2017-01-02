@@ -38,7 +38,7 @@ extension MediaType: Equatable {}
 /**
 Compare if two mediatypes are equal or different.
 */
-func ==(lhs: MediaType, rhs: MediaType) -> Bool {
+open func ==(lhs: MediaType, rhs: MediaType) -> Bool {
     return lhs.name == rhs.name && lhs.defaultExtension == rhs.defaultExtension
 }
 
@@ -46,7 +46,7 @@ func ==(lhs: MediaType, rhs: MediaType) -> Bool {
 /**
 Manages mediatypes that are used by epubs.
 */
-class FRMediaType: NSObject {
+open class FRMediaType: NSObject {
     static var XHTML = MediaType(name: "application/xhtml+xml", defaultExtension: ".xhtml", extensions: [".htm", ".html", ".xhtml", ".xml"])
     static var EPUB = MediaType(name: "application/epub+zip", defaultExtension: ".epub")
     static var NCX = MediaType(name: "application/x-dtbncx+xml", defaultExtension: ".ncx")
