@@ -26,6 +26,6 @@ open class FRResource: NSObject {
 
 // MARK: Equatable
 
-open func ==(lhs: FRResource, rhs: FRResource) -> Bool {
+public func ==(lhs: FRResource, rhs: FRResource) -> Bool {
     return lhs.id == rhs.id && lhs.href == rhs.href
 }
