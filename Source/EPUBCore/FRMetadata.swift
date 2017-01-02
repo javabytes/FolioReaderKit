@@ -83,19 +83,19 @@ struct Meta {
 /**
 Manages book metadata.
 */
-class FRMetadata: NSObject {
-    var creators = [Author]()
-    var contributors = [Author]()
-    var dates = [Date]()
-    var language = "en-US"
-    var titles = [String]()
-    var identifiers = [Identifier]()
-    var subjects = [String]()
-    var descriptions = [String]()
-    var publishers = [String]()
-    var format = FRMediaType.EPUB.name
-    var rights = [String]()
-    var metaAttributes = [Meta]()
+open class FRMetadata: NSObject {
+    open var creators = [Author]()
+    open var contributors = [Author]()
+    open var dates = [Date]()
+    open var language = "en-US"
+    open var titles = [String]()
+    open var identifiers = [Identifier]()
+    open var subjects = [String]()
+    open var descriptions = [String]()
+    open var publishers = [String]()
+    open var format = FRMediaType.EPUB.name
+    open var rights = [String]()
+    open var metaAttributes = [Meta]()
     
     /**
      Find a book unique identifier by ID

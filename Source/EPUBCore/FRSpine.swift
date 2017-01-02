@@ -18,17 +18,17 @@ struct Spine {
     }
 }
 
-class FRSpine: NSObject {
-    var pageProgressionDirection: String?
-    var spineReferences = [Spine]()
-    var isRtl: Bool {
+open class FRSpine: NSObject {
+    open var pageProgressionDirection: String?
+    open var spineReferences = [Spine]()
+    open var isRtl: Bool {
         if let pageProgressionDirection = pageProgressionDirection , pageProgressionDirection == "rtl" {
             return true
         }
         return false
     }
 
-    func nextChapter(_ href: String) -> FRResource? {
+    open func nextChapter(_ href: String) -> FRResource? {
         var found = false;
 
         for item in spineReferences {

@@ -8,13 +8,15 @@
 
 import UIKit
 
-class FolioReaderPageIndicator: UIView {
+open class FolioReaderPageIndicator: UIView {
     var pagesLabel: UILabel!
     var minutesLabel: UILabel!
-    var totalMinutes: Int!
-    var totalPages: Int!
-    var currentPage: Int = 1 {
-        didSet { self.reloadViewWithPage(self.currentPage) }
+    open var totalMinutes: Int!
+    open var totalPages: Int!
+    open var currentPage: Int = 1 {
+        didSet {
+            self.reloadViewWithPage(self.currentPage)
+        }
     }
     
     override init(frame: CGRect) {
@@ -41,8 +43,9 @@ class FolioReaderPageIndicator: UIView {
 //        minutesLabel.alpha = 0
         addSubview(minutesLabel)
     }
-    
-    required init?(coder aDecoder: NSCoder) {
+
+
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("storyboards are incompatible with truth and beauty")
     }
     
@@ -104,7 +107,7 @@ class FolioReaderPageIndicator: UIView {
 }
 
 extension FolioReaderPageIndicator: CAAnimationDelegate {
-    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+    public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         // Set the shadow color to the final value of the animation is done
         if let keyPath = anim.value(forKeyPath: "keyPath") as? String , keyPath == "shadowColor" {
             let color = isNight(readerConfig.nightModeBackground, UIColor.white)

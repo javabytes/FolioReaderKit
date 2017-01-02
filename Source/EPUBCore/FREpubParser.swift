@@ -14,25 +14,25 @@ import ZipArchive
 #endif
 import AEXML
 
-class FREpubParser: NSObject, SSZipArchiveDelegate {
-    let book = FRBook()
-    var bookBasePath: String!
-    var resourcesBasePath: String!
-    var shouldRemoveEpub = true
+open class FREpubParser: NSObject, SSZipArchiveDelegate {
+    open let book = FRBook()
+    open var bookBasePath: String!
+    open var resourcesBasePath: String!
+    open var shouldRemoveEpub = true
     fileprivate var epubPathToRemove: String?
     
     /**
      Parse the Cover Image from an epub file.
      Returns an UIImage.
      */
-    func parseCoverImage(_ epubPath: String) -> UIImage? {
+    open func parseCoverImage(_ epubPath: String) -> UIImage? {
         guard let book = readEpub(epubPath: epubPath, removeEpub: false), let coverImage = book.coverImage else {
             return nil
         }
         return UIImage(contentsOfFile: coverImage.fullHref)
     }
 
-    func parseTitle(_ epubPath: String) -> String? {
+    open func parseTitle(_ epubPath: String) -> String? {
 
         guard let book = readEpub(epubPath: epubPath, removeEpub: false), let title = book.title() else {
             return nil
@@ -40,7 +40,7 @@ class FREpubParser: NSObject, SSZipArchiveDelegate {
         return title
     }
 
-    func parseAuthorName(_ epubPath: String) -> String? {
+    open func parseAuthorName(_ epubPath: String) -> String? {
         guard let book = readEpub(epubPath: epubPath, removeEpub: false), let authorName = book.authorName() else {
         return nil
         }
@@ -54,7 +54,7 @@ class FREpubParser: NSObject, SSZipArchiveDelegate {
      Unzip, delete and read an epub file.
      Returns a FRBook.
     */
-    func readEpub(epubPath withEpubPath: String, removeEpub: Bool = true, unzipPath: String? = nil) -> FRBook? {
+    open func readEpub(epubPath withEpubPath: String, removeEpub: Bool = true, unzipPath: String? = nil) -> FRBook? {
         epubPathToRemove = withEpubPath
         shouldRemoveEpub = removeEpub
 
