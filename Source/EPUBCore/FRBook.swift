@@ -10,34 +10,34 @@
 import UIKit
 
 open class FRBook: NSObject {
-    var resources = FRResources()
-    var metadata = FRMetadata()
-    var spine = FRSpine()
-    var smils = FRSmils()
-    var tableOfContents: [FRTocReference]!
-    var flatTableOfContents: [FRTocReference]!
-    var opfResource: FRResource!
-    var tocResource: FRResource?
-    var coverImage: FRResource?
-    var version: Double?
-    var uniqueIdentifier: String?
+    open var resources = FRResources()
+    open var metadata = FRMetadata()
+    open var spine = FRSpine()
+    open var smils = FRSmils()
+    open var tableOfContents: [FRTocReference]!
+    open var flatTableOfContents: [FRTocReference]!
+    open var opfResource: FRResource!
+    open var tocResource: FRResource?
+    open var coverImage: FRResource?
+    open var version: Double?
+    open var uniqueIdentifier: String?
     
-    func hasAudio() -> Bool {
+    open func hasAudio() -> Bool {
         return smils.smils.count > 0 ? true : false
     }
 
-    func title() -> String? {
+    open func title() -> String? {
         return metadata.titles.first
     }
 
-    func authorName() -> String? {
+    open func authorName() -> String? {
         return metadata.creators.first?.name
     }
 
     // MARK: - Media Overlay Metadata
     // http://www.idpf.org/epub/301/spec/epub-mediaoverlays.html#sec-package-metadata
 
-    func duration() -> String? {
+    open func duration() -> String? {
         return metadata.findMetaByProperty("media:duration");
     }
     

@@ -8,15 +8,15 @@
 
 import UIKit
 
-class FRResource: NSObject {
-    var id: String!
-    var properties: String?
-    var href: String!
-    var fullHref: String!
-    var mediaType: MediaType!
-    var mediaOverlay: String?
+open class FRResource: NSObject {
+    open var id: String!
+    open var properties: String?
+    open var href: String!
+    open var fullHref: String!
+    open var mediaType: MediaType!
+    open var mediaOverlay: String?
 
-    func basePath() -> String! {
+    open func basePath() -> String! {
         if href == nil || href.isEmpty { return nil }
         var paths = fullHref.components(separatedBy: "/")
         paths.removeLast()
@@ -26,6 +26,6 @@ class FRResource: NSObject {
 
 // MARK: Equatable
 
-func ==(lhs: FRResource, rhs: FRResource) -> Bool {
+open func ==(lhs: FRResource, rhs: FRResource) -> Bool {
     return lhs.id == rhs.id && lhs.href == rhs.href
 }
