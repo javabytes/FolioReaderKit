@@ -28,6 +28,6 @@ open class FRTocReference: NSObject {
 
 // MARK: Equatable
 
-public func ==(lhs: FRTocReference, rhs: FRTocReference) -> Bool {
+func ==(lhs: FRTocReference, rhs: FRTocReference) -> Bool {
     return lhs.title == rhs.title && lhs.fragmentID == rhs.fragmentID
 }

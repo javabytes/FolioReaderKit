@@ -38,7 +38,7 @@ extension MediaType: Equatable {}
 /**
 Compare if two mediatypes are equal or different.
 */
-public func ==(lhs: MediaType, rhs: MediaType) -> Bool {
+func ==(lhs: MediaType, rhs: MediaType) -> Bool {
     return lhs.name == rhs.name && lhs.defaultExtension == rhs.defaultExtension
 }
 
