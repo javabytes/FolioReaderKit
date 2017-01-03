@@ -13,10 +13,10 @@ MediaType is used to tell the type of content a resource is.
 
 Examples of mediatypes are image/gif, text/css and application/xhtml+xml
 */
-open struct MediaType {
-    open var name: String
-    open var defaultExtension: String!
-    open var extensions: [String]!
+public struct MediaType {
+    public var name: String
+    public var defaultExtension: String!
+    public var extensions: [String]!
     
     init(name: String, defaultExtension: String) {
         self.name = name

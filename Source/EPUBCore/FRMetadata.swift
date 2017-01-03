@@ -11,7 +11,7 @@ import UIKit
 /**
 Represents one of the authors of the book.
 */
-struct Author {
+public struct Author {
     var name: String!
     var role: String!
     var fileAs: String!
@@ -26,7 +26,7 @@ struct Author {
 /**
 A Book's identifier.
 */
-struct Identifier {
+public struct Identifier {
     var id: String?
     var scheme: String?
     var value: String?
@@ -54,7 +54,7 @@ struct Date {
 /**
 A metadata tag data.
 */
-struct Meta {
+public struct Meta {
     var name: String?
     var content: String?
     var id: String?
@@ -86,7 +86,7 @@ Manages book metadata.
 open class FRMetadata: NSObject {
     open var creators = [Author]()
     open var contributors = [Author]()
-    open var dates = [Date]()
+    var dates = [Date]()
     open var language = "en-US"
     open var titles = [String]()
     open var identifiers = [Identifier]()

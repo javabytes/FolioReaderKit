@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Spine {
+public struct Spine {
     var linear: Bool!
     var resource: FRResource!
     
